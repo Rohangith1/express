@@ -16,3 +16,8 @@
 
 ###  send json: ``` localhost:3000/json example ```
 ![sending json](<Screenshot 2024-08-06 001426.png>)
+
+### path is a inbuild module
+***we can call directories***
+
+![alt text](<Screenshot 2024-08-06 005246.png>)
