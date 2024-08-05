@@ -122,3 +122,93 @@ app.listen(3000, () => {
     console.log('server is running on port 3000')
 })
 ```
+
+## but this is not a good way yo oprate **CRUD operations** =>{ there is always a beller way}
+
+***folder structure***
+![sturcture](<Screenshot 2024-08-06 032523.png>)
+
+***index.js***
+
+``` 
+const express = require('express')
+const app = express();
+const bookRoutes=require('./routes/bookRoutes')
+
+app.use(express.json());
+app.use('/',bookRoutes)
+
+app.listen(3000, () => {
+    console.log('server is running on port 3000')
+})
+```
+***bookController.js***
+
+``` 
+let books = [
+  { id: 1, title: "Book 1", author: "author 1" },
+  { id: 2, title: "Book 2", author: "author 2" },
+];
+
+//read
+const getBooks=(req, res) => {
+  res.json(books);
+}
+
+//create
+const createBooks= (req, res) => {
+  console.log(req.body);
+  const newBook = req.body;
+  newBook.id = books.length + 1;
+  books.push(newBook);
+  res.status(201).json(newBook);
+}
+
+//update /put
+const updateBooks= (req, res) => {
+  const id = parseInt(req.params.id);
+  const updatedBooks = req.body;
+  const index = books.findIndex((book) => book.id === id);
+
+  if (index !== -1) {
+    books[index] = { ...books[index], ...updatedBooks };
+    res.json(books[index]);
+  } else {
+    res.status(404).json({ error: "book not found" });
+  }
+}
+
+//delete
+const deleteBooks=  (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = books.findIndex((book) => book.id === id);
+  if (index !== -1) {
+    const deletedBook = books[index];
+    books.slice(index, 1);
+    res.json(deletedBook);
+  } else {
+    res.status(404).json({ error: "book not found" });
+  }
+}
+
+module.exports = {
+    getBooks,createBooks,updateBooks,deleteBooks
+}
+
+```
+***bookRoutes.js***
+
+``` 
+const express = require('express')
+
+const bookController = require('../controllers/bookController')
+
+const router = express.Router()
+
+router.get('/books',bookController.getBooks)
+router.post('/books',bookController.createBooks)
+router.put('/books/:id',bookController.updateBooks)
+router.delete('/books/:id', bookController.deleteBooks)
+
+module.exports = router;
+```

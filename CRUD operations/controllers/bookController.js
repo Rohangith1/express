@@ -4,23 +4,21 @@ let books = [
 ];
 
 //read
-app.get("/", (req, res) => {
+const getBooks=(req, res) => {
   res.json(books);
-});
-
-app.use(express.json());
+}
 
 //create
-app.post("/books", (req, res) => {
+const createBooks= (req, res) => {
   console.log(req.body);
   const newBook = req.body;
   newBook.id = books.length + 1;
   books.push(newBook);
   res.status(201).json(newBook);
-});
+}
 
 //update /put
-app.put("/books/:id", (req, res) => {
+const updateBooks= (req, res) => {
   const id = parseInt(req.params.id);
   const updatedBooks = req.body;
   const index = books.findIndex((book) => book.id === id);
@@ -31,10 +29,10 @@ app.put("/books/:id", (req, res) => {
   } else {
     res.status(404).json({ error: "book not found" });
   }
-});
+}
 
 //delete
-app.delete("/books/:id", (req, res) => {
+const deleteBooks=  (req, res) => {
   const id = parseInt(req.params.id);
   const index = books.findIndex((book) => book.id === id);
   if (index !== -1) {
@@ -44,8 +42,10 @@ app.delete("/books/:id", (req, res) => {
   } else {
     res.status(404).json({ error: "book not found" });
   }
-});
+}
 
-app.listen(3000, () => {
-  console.log("server is running on port 3000");
-});
+module.exports = {
+    getBooks,createBooks,updateBooks,deleteBooks
+}
+
+
