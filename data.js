@@ -22,7 +22,7 @@ const products = [
   },
   {
     id: 4,
-    name: "ROG strix SCAR 16",
+    name: "laptop ROG strix SCAR 16",
     photo:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeBJiHllh83eptrgtLyCgN6zK736Wm_SksKw&s",
     price: 294990,

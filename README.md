@@ -21,3 +21,15 @@
 ***we can call directories***
 
 ![alt text](<Screenshot 2024-08-06 005246.png>)
+
+## params
+
+```http://localhost:3000/api/products/3```
+
+![params](<Screenshot 2024-08-06 021704.png>)
+
+## query
+
+``` http://localhost:3000/api/v1/query?search=r&limit=2 ```
+
+![query](<Screenshot 2024-08-06 005246-1.png>)
