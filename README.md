@@ -24,12 +24,16 @@
 
 ## params
 
+***The req.params property is an object containing properties mapped to the named route “parameters”. For example, if you have the route /student/:id, then the “id” property is available as req.params.id. This object defaults to {}.***
+
 ```http://localhost:3000/api/products/3```
 
 ![params](<Screenshot 2024-08-06 021704.png>)
 
 ## query
 
+***The req.query property allows you to access the query parameters from the URL of an incoming HTTP request. Query parameters are key-value pairs included in the URL after the “?” symbol, and they are separated by “&” symbols.***
+
 ``` http://localhost:3000/api/v1/query?search=r&limit=2 ```
 
-![query](<Screenshot 2024-08-06 005246-1.png>)
+![alt query](<Screenshot 2024-08-06 021254.png>)
