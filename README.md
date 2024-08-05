@@ -129,7 +129,7 @@ app.listen(3000, () => {
 })
 ```
 
-## but this is not a good way yo oprate **CRUD operations** =>{ there is always a beller way}
+## but this is not a better way to operate **CRUD operations** =>{ there is always a beller way}
 
 ***folder structure***
 
