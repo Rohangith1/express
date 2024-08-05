@@ -8,8 +8,11 @@
 ``` npm install express --save ```
 ## installation of nodemon
 ``` npm i nodemon ```
-  ***nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.***
 
+***nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.***
+
+###  Run express server on: ``` localhost:3000 ```
 ![run express server](<Screenshot 2024-08-06 000505.png>)
 
+###  send json: ``` localhost:3000/json example ```
 ![sending json](<Screenshot 2024-08-06 001426.png>)
