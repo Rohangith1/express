@@ -20,7 +20,7 @@ npm i nodemon
 ###  Run express server on: ``` localhost:3000 ```
 ![run express server](<Screenshot 2024-08-06 000505.png>)
 
-###  send json: ``` localhost:3000/json example ```
+###  send json: ``` localhost:3000/jsonexample ```
 ![sending json](<Screenshot 2024-08-06 001426.png>)
 
 ### path is a inbuild module
